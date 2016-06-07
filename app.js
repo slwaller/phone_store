@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 require("./app.css");
+
 import Cart from './components/Cart'
 import Inventory from './components/Inventory'
 import Phone from './components/Phone'
