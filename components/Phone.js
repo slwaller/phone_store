@@ -1,6 +1,10 @@
 import React from 'react'
 
 class Phone extends React.Component {
+  _addToCart(){
+    console.log('click')
+  }
+
   clickPhone() {
     console.log(this.props.dude.name)
   }
@@ -10,7 +14,7 @@ class Phone extends React.Component {
     return (
       <p>
         <li onClick={this.clickPhone.bind(this)}>{ this.props.dude.name }</li>
-        <button type="button">Buy</button>
+        <button onClick={this._addToCart}>Buy</button>
       </p>
     )
   }
