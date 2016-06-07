@@ -8,7 +8,10 @@ class Phone extends React.Component {
   render() {
     console.log(this.props.dude)
     return (
-      <li onClick={this.clickPhone.bind(this)}>{ this.props.dude.name }</li>  
+      <p>
+        <li onClick={this.clickPhone.bind(this)}>{ this.props.dude.name }</li>
+        <button type="button">Buy</button>
+      </p>
     )
   }
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Phone from './components/Phone'
+import Phone from './Phone'
 
 class Inventory extends React.Component {
   renderPhone(phone) {
