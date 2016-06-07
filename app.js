@@ -3,25 +3,33 @@ import ReactDOM from "react-dom";
 
 require("./app.css");
 import Cart from './components/Cart'
+import Inventory from './components/Inventory'
+import Phone from './components/Phone'
 
-class Inventory extends React.Component{
-  render(){
+let thing = {
+  phones: [
+    { id: 1, name: "Sam's Busted Phone"},
+    { id: 2, name: "Nick's Beast"},
+    { id: 3, name: "Brian's Busted Ass Phone"}
+  ]
+}
+
+let thong = {
+  cartlist: []
+}
+
+class App extends React.Component {
+  render() {
     return (
+      // React renders should only return 1 element
       <div>
-        <h1> Phones For Sale
-          <ul>
-            <li id="phone1">Phone 1</li>
-            <li id="phone2">Phone 2</li>
-            <li id="phone3">Phone 3</li>
-            <li id="phone4">Phone 4</li>
-            <li id="phone5">Phone 5</li>
-          </ul>
-        </h1>
+        <Inventory phones={thing.phones}/>
+        <Cart list ={thong.cartlist}/>
+        <Phone />
       </div>
-    );
+    )
   }
 }
 
 
-
-ReactDOM.render(<Inventory />, document.getElementById('phone-index'));
+ReactDOM.render(<App />, document.getElementById('phone-index'));
