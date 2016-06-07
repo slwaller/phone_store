@@ -1,12 +1,15 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <title>Hello React!</title>
+  <title></title>
   </head>
-  <body>
-    <div id="example"></div>
-  <script src="http://localhost:8080/webpack-dev-server.js"></script>
-  <script src="http://localhost:8080/bin/app.bundle.js"></script>
-  </body>
+    <body>
+      <div id="container">
+          <div id="header">
+              <h1>Phone Store</h1>
+          </div>
+          <div id="mount"></div>
+          <div class="logview" id="logview">Rendering history:<br/></div>
+          <button onClick="document.getElementById('logview').innerHTML = '';" style="float:right">clear</button>
+      </div>
+    </body>
 </html>
