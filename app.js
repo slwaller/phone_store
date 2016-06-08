@@ -5,6 +5,8 @@ require("./app.css");
 
 import Cart from './components/Cart'
 import Inventory from './components/Inventory'
+import autobind from 'autobind-decorator'
+
 
 
   let thing = {
@@ -14,6 +16,7 @@ import Inventory from './components/Inventory'
       { id: 3, name: "Brian's Busted Ass Phone"}
     ]
   }
+@autobind
 
 class App extends React.Component {
 
@@ -26,17 +29,23 @@ class App extends React.Component {
     this.setState({ cartlist: cartlist })
   }
 
-  componentDidMount(){
-    this.setState({
-      cartlist: "TEST"
-    })
+  addToCartList(phone) {
+    var list = this.state.cartlist
+    list.push(phone)
+    this.updateCartList(list);
   }
+
+  // componentDidMount(){
+  //   this.setState({
+  //     cartlist: "TEST"
+  //   })
+  // }
 
   render() {
     return (
       // React renders should only return 1 element
       <div>
-        <Inventory phones={thing.phones}/>
+        <Inventory phones={thing.phones} addToCartList={this.addToCartList}/>
         <Cart list ={this.state.cartlist}/>
       </div>
     )
